@@ -7,6 +7,7 @@ var checkAuth = require("../middlewares/checkAuth.js");
 router.get('/', function(req, res, next) {
   res.send('Новый маршрутизатор, для маршрутов, начинающихся с gates');
 });
+
 router.get("/:nick",checkAuth, async function(req, res, next) {
   var gates = await Gate.find({nick: req.params.nick});
   console.log(gates)
