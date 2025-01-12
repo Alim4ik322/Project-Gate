@@ -19,8 +19,7 @@ router.get('/logreg', function(req, res, next) {
     console.log(users);
     if (!users.length) {
     //res.send("<h1>Пользователь НЕ найден</h1>");
-    var user = new
-    User({username:username,password:password})
+    var user = new User({username:username,password:password})
     await user.save();
     req.session.user_id = user._id;
     res.redirect('/');
